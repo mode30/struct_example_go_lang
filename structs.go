@@ -28,10 +28,18 @@ func(person *Person) createPerson()(personConstruct Person,err error){
 			firstName: person.firstName,
 			lastName:person.lastName,
 			age:person.age,
+			createdAt: person.createdAt,
 		}
 		return personResult,nil
 	}
 
+}
+
+func (person *Person)clearUser()(personConstruct Person,err error){
+	person.firstName=""
+	person.lastName=""
+	person.createdAt=nil
+	person.age=0
 }
 func main(){
 	// timeValue:=time.Now()
